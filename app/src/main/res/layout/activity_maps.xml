@@ -1,0 +1,107 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapsActivity">
+
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MapsActivity" />
+
+    <RelativeLayout
+        android:id="@+id/view"
+        android:layout_width="100dip"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray"
+        android:visibility="gone">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/horizontal_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:visibility="gone">
+
+        <ImageButton
+            android:id="@+id/filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dip"
+            android:src="@drawable/color_filter" />
+
+        <ImageButton
+            android:id="@+id/camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/filter"
+            android:layout_marginBottom="50dip"
+            android:src="@drawable/camera_pic" />
+
+        <ImageButton
+            android:id="@+id/refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/camera"
+            android:layout_marginBottom="50dip"
+
+            android:src="@drawable/refresh_pic" />
+
+        <ImageButton
+            android:id="@+id/heart"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/refresh"
+            android:src="@drawable/heart" />
+
+        <RelativeLayout
+            android:id="@+id/map_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/filter"></RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <com.snapdeal.drag.pedrovgs.DraggableView xmlns:draggable_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/draggable_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/black"
+        android:visibility="gone"
+        draggable_view:bottom_view_id="@+id/lv_episodes"
+        draggable_view:top_view_id="@+id/iv_fan_art"
+        draggable_view:top_view_margin_bottom="10dip"
+        draggable_view:top_view_margin_right="10dip"
+        draggable_view:top_view_x_scale_factor="2.3"
+        draggable_view:top_view_y_scale_factor="2.3">
+
+        <!-- ListView Episodes -->
+
+        <ListView
+            android:id="@+id/lv_episodes"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/iv_fan_art" />
+
+        <!-- TvShow Fan Art -->
+
+        <ImageView
+            android:id="@+id/iv_fan_art"
+            style="@style/image_view"
+            android:layout_width="fill_parent"
+            android:layout_height="150dip"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/tv_show_button_image" />
+
+    </com.snapdeal.drag.pedrovgs.DraggableView>
+
+
+</FrameLayout>
